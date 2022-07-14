@@ -5,34 +5,6 @@ package function.leetcode;
  */
 public class F21 {
 
-    class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {
-
-        }
-        ListNode(int val) {
-            this.val = val;
-        }
-        ListNode(int val, ListNode next) {
-            this.val = val; this.next = next;
-        }
-
-        public int getVal() {
-            return val;
-        }
-        public void setVal(int val) {
-            this.val = val;
-        }
-
-        public ListNode getNext() {
-            return next;
-        }
-        public void setNext(ListNode next) {
-            this.next = next;
-        }
-    }
-
     private ListNode l1 = new ListNode();
     private ListNode l2 = new ListNode();
     private ListNode l3 = new ListNode();
@@ -67,22 +39,9 @@ public class F21 {
         }
     }
 
-    public ListNode initList(String s) {
-        ListNode h = new ListNode();
-        ListNode n = h;
-        String[] lg = s.split(",");
-        for (String l: lg) {
-            ListNode e = new ListNode();
-            e.setVal(Integer.valueOf(l));
-            n.setNext(e);
-            n = n.getNext();
-        }
-        return h.getNext();
-    }
-
     public void initList(String s1, String s2) {
-        l1 = initList(s1);
-        l2 = initList(s2);
+        l1 = l1.initList(s1);
+        l2 = l2.initList(s2);
     }
 
     public void test(String s1, String s2) {
@@ -97,4 +56,5 @@ public class F21 {
             l3 = l3.getNext();
         }
     }
+
 }
